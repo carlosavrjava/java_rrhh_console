@@ -39,8 +39,7 @@ public class Empleado {
         this.jefe = jefe;
     }
 
-    public Empleado(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Empleado() {
     }
 
     public String getIdempleado() {

@@ -15,12 +15,22 @@ public class Usuario {
     private String usuario;
     private String clave;
     private int estado;
+    private String rol;
 
-    public Usuario(String idempleado, String usuario, String clave, int estado) {
+    public Usuario(String idempleado, String usuario, String clave, int estado, String rol) {
         this.idempleado = idempleado;
         this.usuario = usuario;
         this.clave = clave;
         this.estado = estado;
+        this.rol = rol;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public Usuario() {
@@ -60,6 +70,18 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "idempleado" + idempleado + "usuario" + usuario + "clave" + clave + "estado" + estado + '}';
+        return "Usuario{" + "idempleado" + idempleado + "usuario" + usuario + "clave" + clave + "estado" + estado + "rol" + rol + '}';
+    }
+
+    public String toTableView() {
+        return "| "
+                + idempleado
+                + " | "
+                + usuario
+                + " | "
+                + estado
+                + " | "
+                + rol
+                +" |";
     }
 }

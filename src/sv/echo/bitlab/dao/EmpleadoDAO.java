@@ -32,7 +32,7 @@ public class EmpleadoDAO extends AbstractDAO<Empleado> {
 
     @Override
     public String[] getTableColumns() {
-        String[] str = {"idempleado", "apellido", "nombre", "fecingreso", "email", "telefono", "idcargo", "iddepartamento", "sueldo", "comision", "jefe"};
+        String[] str = {"idempleado", "apellido", "nombre", "fecingreso", "email", "telefono", "idcargo", "iddepartamento", "sueldo", "comision", "jefe", "fecegreso"};
         return str;
     }
 
@@ -49,7 +49,8 @@ public class EmpleadoDAO extends AbstractDAO<Empleado> {
                 rs.getInt("iddepartamento"),
                 rs.getInt("sueldo"),
                 rs.getInt("comision"),
-                rs.getString("jefe")
+                rs.getString("jefe"),
+                rs.getDate("fecegreso")
         );
     }
 
@@ -66,6 +67,7 @@ public class EmpleadoDAO extends AbstractDAO<Empleado> {
         ps.setInt(9, entity.getSueldo());
         ps.setInt(10, entity.getComision());
         ps.setString(11, entity.getJefe());
+        ps.setDate(12, entity.getFecegreso());
     }
 
     @Override
@@ -82,7 +84,8 @@ public class EmpleadoDAO extends AbstractDAO<Empleado> {
         ps.setInt(10, entity.getComision());
         ps.setString(11, entity.getJefe());
         // este parametro es para la condicion del where
-        ps.setString(12, entity.getIdempleado());
+        ps.setDate(12, entity.getFecegreso());
+        ps.setString(13, entity.getIdempleado());
     }
     
 }

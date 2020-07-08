@@ -47,8 +47,19 @@ public class Departamento {
     public void setIdubicacion(String idubicacion) {
         this.idubicacion = idubicacion;
     }
+
     @Override
     public String toString() {
-        return "Departamento{" + "iddepartamento" + iddepartamento + "nombre" + nombre + "idubicacion" + idubicacion  + '}';
+        return "Departamento{" + "iddepartamento" + iddepartamento + "nombre" + nombre + "idubicacion" + idubicacion + '}';
+    }
+
+    public String toTableView() {
+        return "| "
+                + iddepartamento
+                + " | "
+                + nombre
+                + " | "
+                + idubicacion
+                + " |";
     }
 }

@@ -24,8 +24,17 @@ public class Empleado {
     private int sueldo;
     private int comision;
     private String jefe;
+    private Date fecegreso;
 
-    public Empleado(String idempleado, String apellido, String nombre, Date fecingreso, String email, String telefono, String idcargo, int iddepartamento, int sueldo, int comision, String jefe) {
+    public Date getFecegreso() {
+        return fecegreso;
+    }
+
+    public void setFecegreso(Date fecegreso) {
+        this.fecegreso = fecegreso;
+    }
+
+    public Empleado(String idempleado, String apellido, String nombre, Date fecingreso, String email, String telefono, String idcargo, int iddepartamento, int sueldo, int comision, String jefe, Date fecegreso) {
         this.idempleado = idempleado;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -37,6 +46,7 @@ public class Empleado {
         this.sueldo = sueldo;
         this.comision = comision;
         this.jefe = jefe;
+        this.fecegreso = fecegreso;
     }
 
     public Empleado() {
@@ -132,6 +142,10 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + " idempleado =" + idempleado + ", apellido =" + apellido + ", nombre =" + nombre + ", fecingreso =" + fecingreso + ", email =" + email + ", telefono =" + telefono + ", idcargo =" + idcargo + ", iddepartamento =" + iddepartamento + ", sueldo =" + sueldo + ", comision =" + comision + ", jefe =" + jefe + '}';
+        return "Empleado{" + " idempleado =" + idempleado + ", apellido =" + apellido + ", nombre =" + nombre + ", fecingreso =" + fecingreso + ", email =" + email + ", telefono =" + telefono + ", idcargo =" + idcargo + ", iddepartamento =" + iddepartamento + ", sueldo =" + sueldo + ", comision =" + comision + ", jefe =" + jefe + ", fecegreso =" + fecegreso +'}';
+    }
+
+    public String toTableView() {
+        return "| " + idempleado + " | " + apellido + " | " + nombre + " | " + fecingreso + " | " + email + " | " + telefono + " | " + idcargo + " | " + iddepartamento + " | " + sueldo + " | " + comision + " | " + jefe + " | " + fecegreso + " |";
     }
 }

@@ -9,20 +9,30 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sv.echo.bitlab.dao.EmployeesDAO;
-import sv.echo.bitlab.entidades.Employe;
+import sv.echo.bitlab.dao.*;
+import sv.echo.bitlab.entidades.*;
 
 /**
  *
  * @author rgluis
  */
-public class TestLoad implements Runnable{
+public class TestLoad implements Runnable {
 
     @Override
     public void run() {
-        
-        
-        // para mostrar los resultados de la consulta a la tabla entidad
+        // Para mostrar los datos almacenados en DB RECURSOS
+        CargoDAO cargoDAO = new CargoDAO();
+        for (int i = 0; i <= 10; i++) {
+            try {
+                List<Cargo> cargo = cargoDAO.getAllData();
+                cargo = null;
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TestLoad.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(TestLoad.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
 //        EmployeesDAO employeesDAO = new EmployeesDAO();
 //        for(int i = 0; i<=10; i++)
 //            try {
@@ -34,5 +44,5 @@ public class TestLoad implements Runnable{
 //                Logger.getLogger(TestLoad.class.getName()).log(Level.SEVERE, null, ex);
 //            }
     }
-    
+
 }

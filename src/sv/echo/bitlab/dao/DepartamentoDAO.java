@@ -46,7 +46,7 @@ public class DepartamentoDAO extends AbstractDAO<Departamento> {
     }
 
     @Override
-    protected String[] getTableColumns() {
+    public String[] getTableColumns() {
         String[] str = {
             "iddepartamento",
             "nombre",

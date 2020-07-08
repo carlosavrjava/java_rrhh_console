@@ -22,7 +22,8 @@ public class UsuarioDAO extends AbstractDAO<Usuario> {
                 rs.getString("idempleado"),
                 rs.getString("usuario"),
                 rs.getString("clave"),
-                rs.getInt("estado")
+                rs.getInt("estado"),
+                rs.getString("rol")
         );
     }
 
@@ -32,6 +33,7 @@ public class UsuarioDAO extends AbstractDAO<Usuario> {
         ps.setString(2, entity.getUsuario());
         ps.setString(3, entity.getClave());
         ps.setInt(4, entity.getEstado());
+        ps.setString(5, entity.getRol());
     }
 
     @Override
@@ -40,7 +42,8 @@ public class UsuarioDAO extends AbstractDAO<Usuario> {
         ps.setString(2, entity.getUsuario());
         ps.setString(3, entity.getClave());
         ps.setInt(4, entity.getEstado());
-        ps.setString(5, entity.getIdempleado());
+        ps.setString(5, entity.getRol());
+        ps.setString(6, entity.getIdempleado());
     }
 
     @Override
@@ -49,12 +52,13 @@ public class UsuarioDAO extends AbstractDAO<Usuario> {
     }
 
     @Override
-    protected String[] getTableColumns() {
+    public String[] getTableColumns() {
         String[] str = {
             "idempleado",
             "usuario",
             "clave",
-            "estado"
+            "estado",
+            "rol"
         };
         return str;
     }

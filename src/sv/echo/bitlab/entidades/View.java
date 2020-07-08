@@ -14,26 +14,32 @@ import sv.echo.bitlab.dao.AbstractDAO;
 public class View {
 
     private String idempleado;
+    private String depto;
+    private String cargo;
     private String apellido;
     private String nombre;
-    private int sueldo;
-    private int comision;
-    private int total;
-    private Double afp;
+    private Double salario;
     private Double isss;
+    private Double afp;
+    private Double rentaGrabada;
+    private Double rentaMensual;
+    private Double salarioRecibido;
 
-    public View(String idempleado, String apellido, String nombre, int sueldo, int comision, int total, Double afp, Double isss) {
-        this.idempleado = idempleado;
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.sueldo = sueldo;
-        this.comision = comision;
-        this.total = total;
-        this.afp = afp;
-        this.isss = isss;
+    public View() {
     }
 
-    public View(){
+    public View(String idempleado, String depto, String cargo, String apellido, String nombre, Double salario, Double isss, Double afp, Double rentaGrabada, Double rentaMensual, Double salarioRecibido) {
+        this.idempleado = idempleado;
+        this.depto = depto;
+        this.cargo = cargo;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.salario = salario;
+        this.isss = isss;
+        this.afp = afp;
+        this.rentaGrabada = rentaGrabada;
+        this.rentaMensual = rentaMensual;
+        this.salarioRecibido = salarioRecibido;
     }
 
     public String getIdempleado() {
@@ -42,6 +48,22 @@ public class View {
 
     public void setIdempleado(String idempleado) {
         this.idempleado = idempleado;
+    }
+
+    public String getDepto() {
+        return depto;
+    }
+
+    public void setDepto(String depto) {
+        this.depto = depto;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public String getApellido() {
@@ -60,36 +82,12 @@ public class View {
         this.nombre = nombre;
     }
 
-    public int getSueldo() {
-        return sueldo;
+    public Double getSalario() {
+        return salario;
     }
 
-    public void setSueldo(int sueldo) {
-        this.sueldo = sueldo;
-    }
-
-    public int getComision() {
-        return comision;
-    }
-
-    public void setComision(int comision) {
-        this.comision = comision;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
-
-    public Double getAfp() {
-        return afp;
-    }
-
-    public void setAfp(Double afp) {
-        this.afp = afp;
+    public void setSalario(Double salario) {
+        this.salario = salario;
     }
 
     public Double getIsss() {
@@ -100,46 +98,89 @@ public class View {
         this.isss = isss;
     }
 
+    public Double getAfp() {
+        return afp;
+    }
+
+    public void setAfp(Double afp) {
+        this.afp = afp;
+    }
+
+    public Double getRentaGrabada() {
+        return rentaGrabada;
+    }
+
+    public void setRentaGrabada(Double rentaGrabada) {
+        this.rentaGrabada = rentaGrabada;
+    }
+
+    public Double getRentaMensual() {
+        return rentaMensual;
+    }
+
+    public void setRentaMensual(Double rentaMensual) {
+        this.rentaMensual = rentaMensual;
+    }
+
+    public Double getSalarioRecibido() {
+        return salarioRecibido;
+    }
+
+    public void setSalarioRecibido(Double salarioRecibido) {
+        this.salarioRecibido = salarioRecibido;
+    }
+
     @Override
     public String toString() {
         return "Planilla { "
-                + "idempleado"
+                + "idempleado: "
                 + idempleado
-                + "apellido"
+                + "depto: "
+                + depto
+                + "cargo: "
+                + cargo
+                + "apellido: "
                 + apellido
-                + "nombre"
+                + "nombre: "
                 + nombre
-                + "sueldo"
-                + sueldo
-                + "comision"
-                + comision
-                + "total"
-                + total
-                + "afp"
-                + afp
-                + "isss"
+                + "salario: "
+                + salario
+                + "isss: "
                 + isss
+                + "afp: "
+                + afp
+                + "rentaGrabada: "
+                + rentaGrabada
+                + "rentaMensual: "
+                + rentaMensual
+                + "salarioRecibido: "
+                + salarioRecibido
                 + '}';
     }
 
     public String toTableView() {
         return "| "
-                + " | "
                 + idempleado
+                + " | "
+                + depto
+                + " | "
+                + cargo
                 + " | "
                 + apellido
                 + " | "
                 + nombre
                 + " | "
-                + sueldo
+                + salario
                 + " | "
-                + comision
-                + " | "
-                + total
+                + isss
                 + " | "
                 + afp
                 + " | "
-                + isss
+                + rentaGrabada
+                + " | "
+                + rentaMensual
+                + " | "
+                + salarioRecibido
                 + " |";
     }
 

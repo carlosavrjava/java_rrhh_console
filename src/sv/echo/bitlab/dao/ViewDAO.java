@@ -24,13 +24,16 @@ public class ViewDAO extends AbstractDAO<View> {
     protected View getMappingResults(ResultSet rs) throws SQLException {
         return new View(
                 rs.getString("idempleado"),
+                rs.getString("depto"),
+                rs.getString("cargo"),
                 rs.getString("apellido"),
                 rs.getString("nombre"),
-                rs.getInt("sueldo"),
-                rs.getInt("comision"),
-                rs.getInt("total"),
+                rs.getDouble("salario"),
+                rs.getDouble("isss"),
                 rs.getDouble("afp"),
-                rs.getDouble("isss")
+                rs.getDouble("rentaGrabada"),
+                rs.getDouble("rentaMensual"),
+                rs.getDouble("salarioRecibido")
         );
     }
 
@@ -53,13 +56,16 @@ public class ViewDAO extends AbstractDAO<View> {
     protected String[] getTableColumns() {
         String[] str = {
             "idempleado",
+            "depto",
+            "cargo",
             "apellido",
             "nombre",
-            "sueldo",
-            "comision",
-            "total",
+            "salario",
+            "isss",
             "afp",
-            "isss"
+            "rentaGrabada",
+            "rentaMensual",
+            "salarioRecibido"
         };
         return str;
     }
